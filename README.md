@@ -9,6 +9,18 @@ editor, and the HUD of several popular mods can be tuned the same way.
 The mod is installed on the client only. It never moves anything on its own: every element stays
 where vanilla draws it until you move it.
 
+<p align="left">
+  <!-- Картинка-ссылка -->
+  <a href="https://modrinth.com/mod/dynamic-rpg-hud" target="_blank" style="vertical-align: middle; margin-right: 8px;">
+    <img src="https://cdn2.steamgriddb.com/logo_thumb/7246274686efd0f0309184fed45ee310.png" alt="Логотип Dynamic RPG HUD" width="220">
+  </a>
+  <p align="left">
+  <!-- Картинка-ссылка -->
+  <a href="https://discord.com/invite/7qzAw5Cckx" target="_blank" style="vertical-align: middle; margin-right: 8px;">
+    <img src="https://thumb.wikimedia.org/wikipedia/ru/thumb/b/b7/Discord_logo_svg.svg/3840px-Discord_logo_svg.svg.png?utm_source=ru.wikipedia.org&utm_campaign=index&utm_content=thumbnail" alt="Discord" width="220">
+  </a>
+
+
 ## Quick start
 
 1. Install Fabric Loader and Fabric API, then put the mod into your `mods` folder.
