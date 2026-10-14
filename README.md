@@ -1,6 +1,6 @@
 # Dynamic RPG HUD
 
-**Version 2.2.0 · Fabric · Minecraft Java 1.21.1 · client-side · by Mr_Lan123 and ipEtroIlIu**
+**Version 2.2.0 · Fabric · Minecraft Java 1.21.1, 1.21.9, 1.21.10, 1.21.11 · client-side · by Mr_Lan123 and ipEtroIlIu**
 
 Dynamic RPG HUD hides your hotbar and status bars while you do not need them and brings them
 back the moment something happens. Every element can be moved, resized and tuned in a visual
