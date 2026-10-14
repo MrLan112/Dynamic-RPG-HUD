@@ -1,0 +1,22 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "com.mrlan123.dynamicrpghud.mixin.compat",
+  "compatibilityLevel": "JAVA_21",
+  "plugin": "com.mrlan123.dynamicrpghud.mixin.compat.CompatMixinPlugin",
+  "client": [
+    "GuiGraphicsMixin",
+    "JadeMixin",
+    "WthitMixin",
+    "XaeroMinimapMixin",
+    "XaeroPipMixin",
+    "SodiumExtraMixin",
+    "VoiceChatMixin",
+    "MiniHudMixin",
+    "SodiumExtraHudMixin",
+    "OverflowingBarsMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}

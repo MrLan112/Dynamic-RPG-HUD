@@ -1,0 +1,14 @@
+name: Mod support request
+description: Ask for support of another mod's HUD
+labels: [mod-support]
+body:
+  - type: input
+    id: mod
+    attributes:
+      label: Mod name and link
+    validations:
+      required: true
+  - type: textarea
+    id: hud
+    attributes:
+      label: Which part of its HUD should be movable or hideable?

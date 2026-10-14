@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "dynamicrpghud",
+  "version": "${version}",
+  "name": "Dynamic RPG HUD",
+  "description": "Hides your hotbar and status bars with a smooth animation while you are idle at full health, on the move, or on a hotkey, and brings them back the moment something changes. Move, scale and fine-tune every HUD element in the built-in editor.",
+  "authors": [
+    "Mr_Lan123",
+    "ipEtroIlIu"
+  ],
+  "custom": {
+    "dynamicrpghud:credits": "Mr_Lan123 (main creator), ipEtroIlIu (Productive Analyst)"
+  },
+  "contact": {
+    "homepage": "https://modrinth.com/mod/dynamic-rpg-hud",
+    "sources": "https://github.com/MrLan112/Dynamic-RPG-HUD",
+    "issues": "https://discord.com/invite/7qzAw5Cckx"
+  },
+  "license": "MIT",
+  "icon": "assets/dynamicrpghud/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.mrlan123.dynamicrpghud.DynamicRpgHud"
+    ],
+    "modmenu": [
+      "com.mrlan123.dynamicrpghud.ModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "dynamicrpghud.mixins.json",
+    {
+      "config": "dynamicrpghud.compat.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.17.3",
+    "fabric-api": "*",
+    "minecraft": ">=1.21.11 <=1.21.11",
+    "java": ">=21"
+  },
+  "suggests": {
+    "modmenu": "*"
+  }
+}
