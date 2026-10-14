@@ -1,0 +1,70 @@
+plugins {
+    id('fabric-loom') version "${loom_version}"
+    id('maven-publish')
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+    archivesName = project.archives_base_name
+}
+
+repositories {
+    // Mod Menu (optional at runtime, compile-only here).
+    maven {
+        name = 'TerraformersMC'
+        url = 'https://maven.terraformersmc.com/releases/'
+        content {
+            includeGroup('com.terraformersmc')
+        }
+    }
+}
+
+loom {
+    // Compile against official Mojang mappings instead of Yarn.
+    officialMojangMappings()
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings loom.officialMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+    // MixinExtras (@WrapMethod) is bundled with Fabric Loader; compile-only here.
+    compileOnly "io.github.llamalad7:mixinextras-common:0.4.1"
+
+    testImplementation "org.junit.jupiter:junit-jupiter:5.10.2"
+    testRuntimeOnly "org.junit.platform:junit-platform-launcher:1.10.2"
+
+    // Adds the "Configure" button in Mod Menu; the mod works without it.
+    modCompileOnly "com.terraformersmc:modmenu:${project.modmenu_version}"
+}
+
+processResources {
+    inputs.property("version", project.version)
+    filteringCharset = "UTF-8"
+    filesMatching("fabric.mod.json") {
+        expand(version: project.version)
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 21
+}
+
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
+    // The unit tests only cover the pure logic; they never block building the mod.
+    ignoreFailures = true
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+    withSourcesJar()
+}
+
+// Produces build/libs/${archives_base_name}-${mod_version}.jar
